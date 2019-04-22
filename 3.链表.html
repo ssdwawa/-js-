@@ -2,116 +2,124 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+		  content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible"
+		  content="ie=edge">
+	<title>Document</title>
 </head>
 
 <body>
-    <script>
-        // 相对于数组，链表在添加或移除元素的时候不需要移动其他元素，需要使用指针
-        function LinkedList() {
-            var Node = function (ele) {
-                this.ele = ele;
-                this.next = null
-            }
+	<script>
+		// 相对于数组，链表在添加或移除元素的时候不需要移动其他元素，需要使用指针
+		function LinkedList() {
+			var Node = function (ele) {
+				this.ele = ele;
+				this.next = null
+			}
 
-            var length = 0
-            var head = null
+			var length = 0
+			var head = null
 
-            this.append = function (ele) {
-                var node = new Node(ele),
-                    current
+			this.append = function (ele) {
+				var node = new Node(ele),
+					current
 
-                if (head == null) {
-                    head = node
-                } else {
-                    //真的是从起点一个个的去找。。。。
-                    current = head
+				if (head == null) {
+					head = node
+				} else {
+					//真的是从起点一个个的去找。。。。
+					current = head
 
-                    while (current.next) {
-                        current = current.next
-                    }
+					while (current.next) {
+						current = current.next
+					}
 
-                    current.next = node
+					current.next = node
 
-                }
+				}
 
-                length++
-            }
+				length++
+			}
 
-            this.insert = function (pos, ele) {
-                if (pos >= 0 && pos <= length) {
-                    var node = new Node(ele),
-                        current = head,
-                        pre,
-                        index = 0
+			this.insert = function (pos, ele) {
+				if (pos >= 0 && pos <= length) {
+					var node = new Node(ele),
+						current = head,
+						pre,
+						index = 0
 
-                    if (pos === 0) {
-                        node.next = current
-                        head = node
-                    } else {
-                        while (index++ < pos) {
-                            pre = current
-                            current = current.next
-                        }
+					if (pos === 0) {
+						node.next = current
+						head = node
+					} else {
+						while (index++ < pos) {
+							pre = current
+							current = current.next
+						}
 
-                        pre.next = node
-                        node.next = current
-                    }
+						pre.next = node
+						node.next = current
+					}
 
-                    length++
-                }
-            }
+					length++
+				}
+			}
 
-            this.findByNum = function (num) {
-                var current = head;
-                var index = 0
-                while (index++ < num - 1) {
-                    current = current.next;
-                }
-                return current;
-            }
+			this.findByNum = function (num) {
+				var current = head;
+				var index = 0
+				while (index++ < num - 1) {
+					current = current.next;
+				}
+				return current;
+			}
 
-            this.display = function () {
-                var current = head
-                console.log(head.ele)
-                while (current.next) {
-                    current = current.next;
-                    console.log(current.ele)
-                }
-            }
+			this.display = function () {
+				var current = head
 
-            this.rotate = function () {
-                var current = head
+				while (current.next) {
+					current = current.next;
+					console.log(current.ele)
+				}
+			}
 
-                while (current.next) {
-                    current.head
-                }
-            }
-        }
+			this.rotate = function () {
 
+				var current = head,
+					next,
+					pre = null,
+					index = 0
 
-        var linkedList = new LinkedList()
-        linkedList.append(1)
+				while (current) {
+					next = current.next
+					current.next = pre
+					pre = current
+					current = next
+				}
 
-        linkedList.append(2)
-
-        linkedList.append(3)
-
-        linkedList.append(4)
-
-        // linkedList.display()
-
-        linkedList.insert(3, 3.5)
-
-        linkedList.display()
+			}
+		}
 
 
+		var linkedList = new LinkedList()
+		linkedList.append(1)
 
+		linkedList.append(2)
 
-    </script>
+		linkedList.append(3)
+
+		linkedList.append(4)
+
+		// linkedList.display()
+
+		// linkedList.insert(3, 3.5)
+
+		linkedList.rotate()
+
+		linkedList.display()
+	</script>
 </body>
 
 </html>
