@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 栈的概念就是一摞书，始终操作顶部的
+        // function Stack() {
+        //     var items = []
+
+        //     this.push = function (item) {
+        //         items.push(item)
+        //     }
+
+        //     this.pop = function (item) {
+        //         return items.pop(item)
+        //     }
+
+        //     //看顶部
+        //     this.peek = function (item) {
+        //         return items[items.length - 1]
+        //     }
+
+        //     //判断是否为空
+        //     this.isEmpty = function () {
+        //         return items.length === 0
+        //     }
+
+        //     //判断是否为空
+        //     this.size = function () {
+        //         return items.length
+        //     }
+
+        //     //置空
+        //     this.clear = function () {
+        //         items = []
+        //     }
+
+        //     this.print = function () {
+        //         console.log(items)
+        //     }
+        // }
+
+        // function divideBy2(number) {
+        //     var rem = null,
+        //         resultArry = [],
+        //         result = ''
+
+        //     stack = new Stack()
+
+        //     while (number > 0) {
+        //         rem = number % 2
+        //         number = Math.floor(number / 2)
+        //         stack.push(rem)
+
+        //     }
+
+
+
+        //     while (!stack.isEmpty()) {
+        //         console.log(stack)
+        //         result += stack.pop()
+        //     }
+
+
+
+        //     console.log(result)
+        // }
+
+        // divideBy2(10)
+
+
+        // function Queue() {
+        //     var items = []
+
+        //     this.enqueue = function (item) {
+        //         items.push(item)
+        //     }
+
+        //     this.dequeue = function () {
+        //         return items.shift()
+        //     }
+
+        //     //看顶部
+        //     this.peek = function (item) {
+        //         return items[0]
+        //     }
+
+        //     //判断是否为空
+        //     this.isEmpty = function () {
+        //         return items.length === 0
+        //     }
+
+        //     //判断是否为空
+        //     this.size = function () {
+        //         return items.length
+        //     }
+
+        //     //置空
+        //     this.clear = function () {
+        //         items = []
+        //     }
+
+        //     this.print = function () {
+        //         console.log(items)
+        //     }
+
+        //     this.addArry = function (arry) {
+        //         items = arry
+        //     }
+        // }
+
+        // var queue = new Queue()
+
+        // //击鼓传花
+        // function hotPot(arry, num) {
+        //     queue.addArry(arry)
+      
+        //     while (queue.size() > 1) {
+               
+        //         for (var i = 0; i < num; i++) {
+        //             //*按次数在内部无限循环
+        //             queue.enqueue(queue.dequeue())
+        //         }
+        //         console.log(queue.dequeue() + '被淘汰了！')
+
+        //     }
+
+        //     console.log(queue.peek()+ '是胜利者！')
+        // }
+
+        // hotPot([1, 2, 3, 4, 5, 6], 15)
+
+        //优先队列
+
+        // function HandleQueue() {
+        //     var items = []
+
+        //     this.arryAdd = function (obj) {
+        //         if (items.length === 0 || obj.level >= items[items.length - 1].level) {
+        //             items.push(obj)
+        //         } else {
+
+        //             for (let index = 0; index < items.length; index++) {
+        //                 if (obj.level < items[index].level) {
+        //                     //插队
+        //                     items.splice(index, 0, obj)
+        //                     added = true
+        //                     break
+        //                 }
+        //             }
+
+        //         }
+        //     }
+
+        //     this.print = function () {
+        //         console.log(items)
+        //     }
+        // }
+
+        // var handleQueue = new HandleQueue()
+
+        // handleQueue.arryAdd({ name: 'ssd1', level: 1 })
+
+        // handleQueue.arryAdd({ name: 'ssd2', level: 1 })
+        // handleQueue.arryAdd({ name: 'ssd3', level: 2 })
+        // handleQueue.arryAdd({ name: 'ssd4', level: 1 })
+        // handleQueue.arryAdd({ name: 'ssd5', level: 1 })
+        // handleQueue.arryAdd({ name: 'ssd6', level: 3 })
+        // handleQueue.arryAdd({ name: 'ssd7', level: 2 })
+        // handleQueue.print()
+
+
+
+        //练习  2个栈实现一个队列
+
+        var stack1 = [],
+            stack2 = []
+
+
+        function push(item){
+            stack1.push(item)
+        }
+
+        function pop(){
+            
+        }
+    </script>
+</body>
+
+</html>

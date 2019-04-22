@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //1.数组遍历
+        var numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+        var judgeNumber = function (x) {
+            console.log(x)
+            return x % 2 === 0 ? true : false
+        }
+        //1.1 every 遍历返回faslse即终结循环
+        numbers.every(judgeNumber)
+
+        //1.2 some 遍历返回true即终结循环
+        numbers.some(judgeNumber)
+
+        //1.3 map 遍历不改变原数组
+        var newMap = numbers.map(judgeNumber)
+        console.log(newMap);
+
+        // 1.4 filter 遍历返回为真的部分，不改变原数组
+        var evenNumer = numbers.filter(judgeNumber)
+
+        //1.5 reduce 求和
+        var sum = numbers.reduce(function (pre, cur, index) {
+            return pre + cur
+        })
+
+
+        //2.自定义排序
+        var person = [
+            { name: 'ssd1', age: '26' },
+            { name: 'ssd', age: '25' },
+            { name: 'ssd2', age: '27' },
+        ]
+
+        function comparePerson(a, b) {
+            if (a.age < b.age) {
+                return -1
+            }
+            if (a.age > b.age) {
+                return 1
+            }
+
+            return 0
+        }
+
+        console.log(person.sort(comparePerson))
+
+        //3.数组连接成字符串
+        var numberString =  numbers.join('-')
+        console.log(numberString)
+    </script>
+</body>
+
+</html>
